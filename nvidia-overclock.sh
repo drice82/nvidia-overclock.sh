@@ -45,6 +45,7 @@ overclock () {
   # You will neeed to add/remove lines based on the number of graphics cards in 
   # your particular system.
   log "Calling nvidia-settings to overclock GPU(s).."
+  log "$nvidia-smi -pl 140"
   log "$DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority (nvidia-settings -c :0 -a '[gpu:0]/GPUGraphicsClockOffset[3]=0' -a '[gpu:0]/GPUMemoryTransferRateOffset[3]=1800')"
   log "$DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority (nvidia-settings -c :0 -a '[gpu:1]/GPUGraphicsClockOffset[3]=0' -a '[gpu:1]/GPUMemoryTransferRateOffset[3]=1800')"
   log "$DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority (nvidia-settings -c :0 -a '[gpu:2]/GPUGraphicsClockOffset[3]=0' -a '[gpu:2]/GPUMemoryTransferRateOffset[3]=1800')"
