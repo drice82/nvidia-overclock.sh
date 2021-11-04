@@ -1,3 +1,18 @@
+# settings
+copy edid.txt to /etc/
+```
+sudo nvidia-xconfig -a --allow-empty-initial-configuration \
+--use-display-device="DFP-0" --connected-monitor="DFP-0" \
+--custom-edid="DFP-0:/etc/edid.txt"  --cool-bits=31
+
+sudo reboot
+```
+ubuntu 18.04
+```
+sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUFanControlState=1
+sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority  nvidia-settings -c :0 -a [fan:GPUID]/GPUTargetFanSpeed=70
+```
+
 # nvidia-overclock.sh
 
 A simple script to manage overclocking of NVIDIA graphics cards on Linux.  You can use it to manually overclock the card values each time or install a systemd service that will be run at startup to automatically perform the overclocking.
