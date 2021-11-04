@@ -7,11 +7,17 @@ sudo nvidia-xconfig -a --allow-empty-initial-configuration \
 
 sudo reboot
 ```
-ubuntu 18.04
+ubuntu 18.04 adjust fan
 ```
 sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUFanControlState=1
 sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority  nvidia-settings -c :0 -a [fan:GPUID]/GPUTargetFanSpeed=70
 ```
+ubuntu 18.04 overclock
+```
+sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUGraphicsClockOffset[3]=64
+sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUMemoryTransferRateOffset[3]=500
+```
+20 和0系显卡的话一般吧[3]改成[4]。
 
 # nvidia-overclock.sh
 
