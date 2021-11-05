@@ -46,6 +46,7 @@ overclock () {
   # your particular system.
   log "Calling nvidia-settings to overclock GPU(s).."
   log "$(nvidia-smi -pl 140)"
+  log "$(nvidia-smi -lock-gpu-clocks=1200,1200)"
   log "$(nvidia-settings -c :0 -a '[gpu:0]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:0]/GPUMemoryTransferRateOffset[4]=2000')"
   log "$(nvidia-settings -c :0 -a '[gpu:1]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:1]/GPUMemoryTransferRateOffset[4]=2000')"
   log "$(nvidia-settings -c :0 -a '[gpu:2]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:2]/GPUMemoryTransferRateOffset[4]=2000')"
