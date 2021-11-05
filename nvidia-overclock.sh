@@ -30,9 +30,9 @@ LOG_FILE="/var/log/nvidia-overclock.log"
 LOG=0
 
 overclock () {
-  # The following default overclock values for the NVIDIA GTX 1070 
+  # The following default overclock values for the NVIDIA GTX 3060ti
   # were found on average to be stable:
-  # - Graphics Clock       = 0
+  # - Graphics Clock       = -100
   # - Memory Transfer Rate = 2000
   #
   # Adjust these values for each card as needed.  Some cards are more 
@@ -46,14 +46,14 @@ overclock () {
   # your particular system.
   log "Calling nvidia-settings to overclock GPU(s).."
   log "$(nvidia-smi -pl 140)"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:0]/GPUGraphicsClockOffset[4]=0' -a '[gpu:0]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:1]/GPUGraphicsClockOffset[4]=0' -a '[gpu:1]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:2]/GPUGraphicsClockOffset[4]=0' -a '[gpu:2]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:3]/GPUGraphicsClockOffset[4]=0' -a '[gpu:3]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:4]/GPUGraphicsClockOffset[4]=0' -a '[gpu:4]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:5]/GPUGraphicsClockOffset[4]=0' -a '[gpu:5]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:6]/GPUGraphicsClockOffset[4]=0' -a '[gpu:6]/GPUMemoryTransferRateOffset[4]=1800')"
-  log "$(DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a '[gpu:7]/GPUGraphicsClockOffset[4]=0' -a '[gpu:7]/GPUMemoryTransferRateOffset[4]=1800')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:0]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:0]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:1]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:1]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:2]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:2]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:3]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:3]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:4]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:4]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:5]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:5]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:6]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:6]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(DISPLAY=:0 XAUTHORITY=XAUTHORITY=/etc/X11/.Xauthority nvidia-settings -c :0 -a '[gpu:7]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:7]/GPUMemoryTransferRateOffset[4]=2000')"
 }
 
 abs_filename() {
