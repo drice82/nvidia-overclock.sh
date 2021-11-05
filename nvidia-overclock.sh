@@ -79,8 +79,8 @@ log() {
 }
 
 xserver_up() {
-  # Give Xserver 10 seconds to come up	
-  sleep 5
+  # Give Xserver 20 seconds to come up	
+  sleep 20
 
   # shellcheck disable=SC2009,SC2126
   if [ "$(ps ax | grep '[x]init' | wc -l)" = "1" ]; then
