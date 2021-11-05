@@ -1,3 +1,18 @@
+# 矿机系统
+## 安装Ubuntu18.06 到U盘
+## 安装驱动
+然后运行以下命令以获取有关图形卡和可用驱动程序的信息：
+sudo apt install ubuntu-drivers-common
+ubuntu-drivers devices
+sudo apt install nvidia-driver-470
+安装完成后，重新启动系统：
+sudo reboot
+当系统返回时，您可以使用nvidia-smi监视工具查看图形卡的状态：
+nvidia-smi
+
+## 安装 xorg，openbox
+sudo apt-get install xorg openbox
+
 # settings
 copy edid.txt to /etc/
 ```
@@ -17,7 +32,7 @@ ubuntu 18.04 overclock
 sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUGraphicsClockOffset[3]=64
 sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUMemoryTransferRateOffset[3]=500
 ```
-20 和0系显卡的话一般吧[3]改成[4]。
+20 和30系显卡的话一般吧[3]改成[4]。
 
 # nvidia-overclock.sh
 
