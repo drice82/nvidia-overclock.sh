@@ -30,10 +30,10 @@ LOG_FILE="/var/log/nvidia-overclock.log"
 LOG=0
 
 overclock () {
-  # The following default overclock values for the NVIDIA GTX 3060ti
+  # The following default overclock values for the NVIDIA GTX 2060
   # were found on average to be stable:
-  # - Graphics Clock       = -100
-  # - Memory Transfer Rate = 2000
+  # - Graphics Clock       = 1080
+  # - Memory Transfer Rate = 1200
   #
   # Adjust these values for each card as needed.  Some cards are more 
   # unstable than others and will only tolerate less overclocking.  Other
@@ -45,24 +45,18 @@ overclock () {
   # You will neeed to add/remove lines based on the number of graphics cards in 
   # your particular system.
   log "Calling nvidia-settings to overclock GPU(s).."
-  log "$(nvidia-smi -pl 140)"
-  #log "$(nvidia-smi -lgc 1215,1215)"
-  log "$(nvidia-smi -i 0 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 1 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 2 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 3 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 4 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 5 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 6 -lgc 1215,1215)"
-  log "$(nvidia-smi -i 7 -lgc 1215,1215)"
-  log "$(nvidia-settings -c :0 -a '[gpu:0]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:0]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:1]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:1]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:2]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:2]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:3]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:3]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:4]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:4]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:5]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:5]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:6]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:6]/GPUMemoryTransferRateOffset[4]=2000')"
-  log "$(nvidia-settings -c :0 -a '[gpu:7]/GPUGraphicsClockOffset[4]=-100' -a '[gpu:7]/GPUMemoryTransferRateOffset[4]=2000')"
+  log "$(nvidia-smi -pm 1)"
+  log "$(nvidia-smi -pl 125)"
+  log "$(nvidia-smi -lgc 1080,1080)"
+  #log "$(nvidia-smi -i 0 -lgc 1215,1215)"
+  log "$(nvidia-settings -a [gpu:0]/GPUPowerMizerMode=1 -a [gpu:0]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:0]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:1]/GPUPowerMizerMode=1 -a [gpu:1]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:1]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:2]/GPUPowerMizerMode=1 -a [gpu:2]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:2]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:3]/GPUPowerMizerMode=1 -a [gpu:3]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:3]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:4]/GPUPowerMizerMode=1 -a [gpu:4]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:4]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:5]/GPUPowerMizerMode=1 -a [gpu:5]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:5]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:6]/GPUPowerMizerMode=1 -a [gpu:6]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:6]/GPUMemoryTransferRateOffset[4]=1200)"
+  log "$(nvidia-settings -a [gpu:7]/GPUPowerMizerMode=1 -a [gpu:7]/GPUGraphicsClockOffsetAllPerformanceLevels=75 -a [gpu:7]/GPUMemoryTransferRateOffset[4]=1200)"
 }
 
 abs_filename() {
