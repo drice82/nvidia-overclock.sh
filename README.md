@@ -1,6 +1,6 @@
 # 矿机系统
 ## 安装Ubuntu18.06 到U盘
-## 安装驱动
+## 安装nvidia驱动
 然后运行以下命令以获取有关图形卡和可用驱动程序的信息：
 sudo apt install ubuntu-drivers-common
 ubuntu-drivers devices
@@ -10,6 +10,16 @@ sudo reboot
 当系统返回时，您可以使用nvidia-smi监视工具查看图形卡的状态：
 nvidia-smi
 
+## 安装AMD驱动
+参考AMD官方网站
+如果遇到
+The following packages have unmet dependencies:
+ amdgpu-lib32 : Depends: libdrm2-amdgpu:i386 (= 1:2.4.106-1286092)
+ 是因为系统是64位的。
+ ```
+sudo dpkg --add-architecture i386
+sudo apt update 
+ ```
 ## 安装 xorg，openbox
 sudo apt-get install xorg openbox
 
