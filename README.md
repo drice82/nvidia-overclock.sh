@@ -2,14 +2,19 @@
 ## 安装Ubuntu18.06 到U盘
 ## 安装nvidia驱动
 然后运行以下命令以获取有关图形卡和可用驱动程序的信息：
+```
 sudo apt install ubuntu-drivers-common
 ubuntu-drivers devices
 sudo apt install nvidia-driver-470
+```
 安装完成后，重新启动系统：
+```
 sudo reboot
+```
 当系统返回时，您可以使用nvidia-smi监视工具查看图形卡的状态：
+```
 nvidia-smi
-
+```
 ## 安装AMD驱动
 参考AMD官方网站
 如果遇到
