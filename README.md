@@ -33,10 +33,12 @@ copy edid.txt to /etc/
 ```
 sudo nvidia-xconfig -a --allow-empty-initial-configuration \
 --use-display-device="DFP-0" --connected-monitor="DFP-0" \
---custom-edid="DFP-0:/etc/edid.txt"  --cool-bits=31
+--custom-edid="DFP-0:/etc/edid.txt"  --cool-bits=28
 
 sudo reboot
 ```
+cool-bits 要用28，如果用31，在装完AMD驱动后，可能遇到无法超频显存的问题。原因不清楚。
+
 ubuntu 18.04 adjust fan
 ```
 sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority nvidia-settings -c :0 -a [gpu:GPUID]/GPUFanControlState=1
