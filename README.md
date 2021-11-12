@@ -20,6 +20,11 @@ The following packages have unmet dependencies:
 sudo dpkg --add-architecture i386
 sudo apt update 
  ```
+ 解压安装驱动，用headless模式
+```
+./amdgpu-pro-install -y --opencl=pal,legacy --headless
+```
+ 
 ## 安装 xorg，openbox
 sudo apt-get install xorg openbox
 
