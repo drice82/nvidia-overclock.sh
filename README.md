@@ -33,6 +33,9 @@ sudo apt update
 ## 安装 xorg，openbox
 sudo apt-get install xorg openbox
 
+## 关闭休眠
+https://blog.csdn.net/ciel_yu/article/details/117130048
+
 # settings
 copy edid.txt to /etc/
 ```
