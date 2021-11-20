@@ -36,6 +36,12 @@ sudo apt-get install xorg openbox
 ## 关闭休眠
 https://blog.csdn.net/ciel_yu/article/details/117130048
 
+## 安装runit守护
+```
+sudo apt install runit
+sudo apt install runit-systemd
+```
+
 # settings
 copy edid.txt to /etc/
 ```
